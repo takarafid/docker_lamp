@@ -19,6 +19,7 @@ RUN apt-get -y install php5.6 php-pear php5.6-mysql php5.6-curl php5.6-mbstring 
     php5.6-cli php5.6-common php5.6-json php5.6-opcache php5.6-readline php5.6-xml php5.6-xdebug
 RUN apt-get -y install imagemagick
 RUN apt-get -y install mysql-community-server
+RUN apt-get -y install postfix mailutils
 ENV DEBIAN_FRONTEND dialog
 
 VOLUME /var/lib/mysql
