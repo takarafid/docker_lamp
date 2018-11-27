@@ -62,3 +62,6 @@ COPY asset/php.ini /etc/php/5.6/apache2/
 
 CMD ["/sbin/init", "3"]
 
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get -y install php5.6-apc php5.6-bcmath php5.6-bz2 php5.6-curl php5.6-dba php5.6-dom php5.6-gd php5.6-imagick php5.6-mbstring
+ENV DEBIAN_FRONTEND dialog
