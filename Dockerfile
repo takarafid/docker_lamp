@@ -16,7 +16,7 @@ RUN apt-get -y update
 RUN apt-get -y install net-tools git make apache2
 RUN apt-get -y install vim curl chkconfig gcc libpcre3-dev unzip locales
 RUN apt-get -y install php5.6 php-pear php5.6-mysql php5.6-curl php5.6-mbstring php5.6-zip \
-    php5.6-cli php5.6-common php5.6-json php5.6-opcache php5.6-readline php5.6-xml php5.6-xdebug
+    php5.6-cli php5.6-common php5.6-json php5.6-opcache php5.6-readline php5.6-xml php5.6-xdebug php5.6-apc
 RUN apt-get -y install imagemagick
 RUN apt-get -y install mysql-community-server
 RUN apt-get -y install postfix mailutils
