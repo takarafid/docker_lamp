@@ -16,11 +16,14 @@ RUN apt-get -y update
 RUN apt-get -y install net-tools git make apache2
 RUN apt-get -y install vim curl chkconfig gcc libpcre3-dev unzip locales
 RUN apt-get -y install php5.6 php-pear php5.6-mysql php5.6-curl php5.6-mbstring php5.6-zip \
-    php5.6-cli php5.6-common php5.6-json php5.6-opcache php5.6-readline php5.6-xml php5.6-xdebug
+    php5.6-cli php5.6-common php5.6-json php5.6-opcache php5.6-readline php5.6-xml php5.6-xdebug \
+    php5.6-apc php5.6-bcmath php5.6-bz2 php5.6-curl php5.6-dba php5.6-dom php5.6-gd php5.6-imagick php5.6-mbstring
 RUN apt-get -y install imagemagick
 RUN apt-get -y install mysql-community-server
 RUN apt-get -y install postfix mailutils
 ENV DEBIAN_FRONTEND dialog
+
+RUN update-alternatives --set php /usr/bin/php5.6
 
 VOLUME /var/lib/mysql
 
@@ -61,6 +64,3 @@ COPY asset/php.ini /etc/php/5.6/apache2/
 
 CMD ["/sbin/init", "3"]
 
-ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get -y install php5.6-apc php5.6-bcmath php5.6-bz2 php5.6-curl php5.6-dba php5.6-dom php5.6-gd php5.6-imagick php5.6-mbstring
-ENV DEBIAN_FRONTEND dialog
