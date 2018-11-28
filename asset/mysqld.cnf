@@ -29,3 +29,8 @@ log-error	= /var/log/mysql/error.log
 # Disabling symbolic-links is recommended to prevent assorted security risks
 symbolic-links=0
 sql_mode = ""
+skip-name-resolve
+query_cache_limit=16M
+query_cache_size=512M
+query_cache_type=1
+
